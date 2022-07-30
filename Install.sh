@@ -12,7 +12,7 @@ Keyboard='br-abnt2'
 Locale='pt_BR.UTF-8'
 LocalTime='America/Sao_Paulo'
 SwapSize='8'
-KernelCMD='intel_iommu=on,igfx_off kvm.ignore_msrs=1 i915.enable_guc=3 i915.enable_fbc=0 nvidia-drm.modeset=1 drm.edid_firmware=eDP-1:edid/144.bin'
+KernelCMD='intel_iommu=on,igfx_off kvm.ignore_msrs=1 i915.enable_guc=2 i915.enable_fbc=0 nvidia-drm.modeset=1 drm.edid_firmware=eDP-1:edid/144.bin'
 Kernel='linux-xanmod-edge-bin'
 EDID="$_git/raw/main/144.bin"
 WallPaper="$_git/raw/main/blue_galaxy.jpg"
@@ -446,6 +446,10 @@ sed -i 's|#channelmix\.fc-cutoff\s.*|channelmix\.fc-cutoff = 0|g' /etc/pipewire/
 sed -i 's|#channelmix\.stereo-widen\s.*|channelmix\.stereo-widen = 0|g' /etc/pipewire/pipewire-pulse.conf
 
 echo "LIBGL_DRI3_DISABLE=1" >> /etc/environment
+echo "PROTON_NO_FSYNC=1" >> /etc/environment
+echo "PROTON_NO_WRITE_WATCH=1" >> /etc/environment
+echo "PROTON_HEAP_DELAY_FREE=1" >> /etc/environment
+echo "PROTON_HIDE_NVIDIA_GPU=1" >> /etc/environment
 
 $XCMD
 
