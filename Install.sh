@@ -273,8 +273,8 @@ pacstrap /mnt --needed libusb-compat usb_modeswitch smartmontools nvme-cli ntfs-
   java-runtime java-environment=8 \
   neofetch htop gparted mediainfo-gui vlc obs-studio audacity fdkaac gimp steam firefox transmission-gtk flatpak $Packages \
   gtk-engines gtk-engine-murrine metacity protobuf spdlog lib32-dbus
-pacstrap -U /mnt 'https://archive.archlinux.org/packages/p/protobuf/protobuf-3.20.1-2-x86_64.pkg.tar.zst'
-yes | pacstrap -C aur1.conf -i /mnt --needed ttf-ms-fonts qogir-gtk-theme-git qogir-icon-theme-git compiz xfce4-panel-compiz mangohud lib32-mangohud $Packages2
+#pacstrap -U /mnt 'https://archive.archlinux.org/packages/p/protobuf/protobuf-3.20.1-2-x86_64.pkg.tar.zst'
+yes | pacstrap -C aur1.conf -i /mnt --needed ttf-ms-fonts qogir-gtk-theme-git qogir-icon-theme-git compiz-git xfce4-panel-compiz mangohud lib32-mangohud $Packages2
 
 cat <<COD > i915paranoid.c
 #include <stdlib.h>
