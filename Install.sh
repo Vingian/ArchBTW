@@ -273,7 +273,7 @@ echo 'GRUB_DEFAULT=saved' >> /etc/default/grub.d/grub.cfg
 echo 'GRUB_SAVEDEFAULT=true' >> /etc/default/grub.d/grub.cfg
 if [ -n "$KernelCMD" ]
 then
-  echo 'GRUB_CMDLINE_LINUX_DEFAULT=\"\$GRUB_CMDLINE_LINUX_DEFAULT ${KernelCMD}\"' >> /etc/default/grub.d/grub.cfg
+  echo 'GRUB_CMDLINE_LINUX_DEFAULT="\$GRUB_CMDLINE_LINUX_DEFAULT ${KernelCMD}"' >> /etc/default/grub.d/grub.cfg
 fi
 grub-mkconfig -o /boot/grub/grub.cfg
 CFG
