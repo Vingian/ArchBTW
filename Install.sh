@@ -108,7 +108,7 @@ pacman -Sy --needed --noconfirm archlinux-keyring
 
 #### #### #### #### #### #### #### ####
 [ ! -e /dev/nvme0n1 -o ! -e /dev/nvme1n1 ] && echo 'NVME check failed...' && exit
-#pacman -U --noconfirm https://archive.archlinux.org/packages/x/xfsprogs/xfsprogs-6.4.0-1-x86_64.pkg.tar.zst
+pacman -U --noconfirm https://archive.archlinux.org/packages/x/xfsprogs/xfsprogs-6.4.0-1-x86_64.pkg.tar.zst
 
 nvme format -s1 -f /dev/nvme0n1 
 [ "$FormatAll" = true ] && nvme format -s1 -f /dev/nvme1n1
