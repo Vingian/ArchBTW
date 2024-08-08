@@ -540,9 +540,13 @@ echo -e '[xfce4-session]\nSaveSession=NONE\n' > /etc/xdg/xfce4/kiosk/kioskrc
 
 [ -d /etc/ssh/sshd_config.d ] && echo 'PermitRootLogin no' > /etc/ssh/sshd_config.d/20-deny_root.conf
 
+mkdir -p /etc/security/limits.d
+echo '* hard nofile 524288' > /etc/security/limits.d/20-filelimit.conf
+echo 'vm.max_map_count = 16777216' > /etc/sysctl.d/20-mapcount.conf
+
+echo 'dev.i915.perf_stream_paranoid = 0' > /etc/sysctl.d/99-i915.conf
 echo 'net.ipv4.icmp_echo_ignore_all = 1' > /etc/sysctl.d/90-firewall.conf
 echo 'net.ipv6.icmp.echo_ignore_all = 1' >> /etc/sysctl.d/90-firewall.conf
-echo 'dev.i915.perf_stream_paranoid = 0' > /etc/sysctl.d/99-i915.conf
 
 [ -f /usr/share/glvnd/egl_vendor.d/50_mesa.json ] && mkdir -p /etc/glvnd/egl_vendor.d && cp /usr/share/glvnd/egl_vendor.d/50_mesa.json /etc/glvnd/egl_vendor.d/05_mesa.json
 
