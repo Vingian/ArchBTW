@@ -15,7 +15,7 @@ WiFiDom='BR'
 SwapSize='8'
 zramSwapSize=$(($(free --giga | awk '/^Mem:/{print $2}') / 4 * 2))
 KernelCMD='consoleblank=3600 threadirqs intel_iommu=on,igfx_off iommu=pt split_lock_detect=off kvm.ignore_msrs=1 kvm.report_ignored_msrs=0 i915.enable_guc=3 i915.enable_fbc=0 nvidia-drm.modeset=1 nvidia.NVreg_UsePageAttributeTable=1 nvidia.NVreg_InitializeSystemMemoryAllocations=0 nvidia.NVreg_EnableStreamMemOPs=1 nvidia.NVreg_EnableResizableBar=1'
-Kernel='linux-cachyos'
+Kernel='linux-cachyos-eevdf'
 WallPaper="$_git/raw/main/blue_galaxy.jpg"
 RGBController="${_git%/*}/ITE8291/raw/main/ITE8291.c"
 Mode='0'
