@@ -298,7 +298,8 @@ pacstrap -P /mnt --needed libusb-compat usb_modeswitch smartmontools nvme-cli hd
   cups system-config-printer hplip \
   vulkan-intel lib32-vulkan-intel intel-compute-runtime intel-media-driver intel-gpu-tools \
   nvidia-open-dkms nvidia-utils lib32-nvidia-utils opencl-nvidia lib32-opencl-nvidia nvidia-settings nvidia-prime \
-  mesa lib32-mesa mesa-utils vulkan-icd-loader lib32-vulkan-icd-loader vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-tools ocl-icd lib32-ocl-icd libva-utils \
+  mesa lib32-mesa mesa-utils vulkan-icd-loader lib32-vulkan-icd-loader vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-tools \
+  ocl-icd lib32-ocl-icd libva lib32-libva libva-utils \
   ttf-roboto ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji terminus-font breeze \
   p7zip zip unzip unrar xarchiver \
   jre-openjdk jdk8-openjdk \
