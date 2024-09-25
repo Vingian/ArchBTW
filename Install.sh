@@ -566,9 +566,9 @@ echo 'net.ipv6.icmp.echo_ignore_all = 1' >> /etc/sysctl.d/99-ignore_echo.conf
 
 echo -e '[defaults]\nntfs:ntfs3_defaults=uid=\$UID,gid=\$GID,noatime,prealloc' > /etc/udisks2/mount_options.conf
 
-echo 'SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="ntfs", ENV{ID_FS_TYPE}="ntfs3"' > /etc/udev/rules.d/99-ntfs3_by_default.rules
+echo 'SUBSYSTEM=="block", ENV{ID_FS_TYPE}=="ntfs", ENV{ID_FS_TYPE}="ntfs3"' > /etc/udev/rules.d/20-ntfs3_by_default.rules
 
-echo 'SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", ENV{UDISKS_MOUNT_OPTIONS_DEFAULTS}="sync"' > /etc/udev/rules.d/99-pendrive.rules
+echo 'ACTION=="add|change", KERNEL=="sd[a-z]", ENV{ID_USB_TYPE}=="disk", RUN+="/bin/sh -c '\''echo 1048576 > /sys/block/%k/bdi/max_bytes && echo 1 > /sys/block/%k/bdi/strict_limit'\''"' > /etc/udev/rules.d/99-pendrive.rules
 
 if (( $zramSwapSize > 0 ))
 then
